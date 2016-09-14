@@ -1,24 +1,48 @@
 # Numencode Content Management System
 
-NumencodeCMS is a web application, based on Laravel framework, that allows publishing, editing and modifying content, 
+**NumencodeCMS** is a web application, based on Laravel framework, that allows publishing, editing and modifying content, 
 organizing, deleting as well as maintenance from a central interface.
 
-It is used to run websites containing blogs, news, and shopping.
+It is used to run websites containing pages, blogs, news, galleries, catalogs and shopping.
 
-NumencodeCMS is a stand-alone application to create, deploy, manage and store content on Web pages. 
-Web content includes text and embedded graphics, photos, video, audio, and code (e.g., for applications) 
+**NumencodeCMS** is a stand-alone application to create, deploy, manage and store content on web pages. 
+Web content includes text and embedded graphics, photos, video, audio and code (e.g., for applications) 
 that displays content or interacts with the user.
 
-NumencodeCMS contains built-in back-office administration panel for managing content and structure on a specific website.
+**NumencodeCMS** contains built-in back-office administration panel for managing content and structure on a specific website.
 
 ## Official Documentation
 
-Documentation for the NumencodeCMS can be found on the [Numencode website](http://numencode.com/docs).
+Documentation for the **NumencodeCMS** can be found on the [Numencode website](http://numencode.com/docs).
 
 ## About the Author
 
-NumencodeCMS was created by, and is maintained by [Blaz Orazem](https://github.com/BlazOrazem).
+**NumencodeCMS** was created by and is maintained by [Blaz Orazem](https://github.com/BlazOrazem).
+
+## Installation
+
+1. Create a project directory and initialize a repository
+```bash
+$ git init
+```
+
+2. Clone this repository to your project directory
+```bash
+$ git clone https://github.com/BlazOrazem/numencode.git
+```
+
+3. Set up environment configuration 
+```bash
+$ cp .env.sample .env
+```
+
+4. Edit .env file and enter your credentials for database, etc.
+```bash
+$ vi .env
+```
 
 ## License
 
 The NumencodeCMS is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+[<img src="https://img.shields.io/packagist/l/doctrine/orm.svg?style=flat-square" alt="MIT License">](LICENSE)
