@@ -13,7 +13,7 @@ that displays content or interacts with the user.
 
 ## Official Documentation
 
-Documentation for the **NumencodeCMS** can be found on the [Numencode website](http://numencode.com/docs).
+Documentation for the **NumencodeCMS** can be found on the [Numencode website](http://www.numencode.com/page/docs/).
 
 ## About the Author
 
