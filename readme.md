@@ -21,22 +21,22 @@ Documentation for the **NumencodeCMS** can be found on the [Numencode website](h
 
 ## Installation
 
-1. Create a project directory and initialize a repository
+Create a project directory and initialize a repository
 ```bash
 $ git init
 ```
 
-2. Clone this repository to your project directory
+Clone this repository to your project directory
 ```bash
 $ git clone https://github.com/BlazOrazem/numencode.git
 ```
 
-3. Set up environment configuration 
+Set up environment configuration 
 ```bash
 $ cp .env.sample .env
 ```
 
-4. Edit .env file and enter your credentials for database, etc.
+Edit .env file and enter your credentials for database, etc.
 ```bash
 $ vi .env
 ```
