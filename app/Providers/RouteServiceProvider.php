@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Numencode\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,21 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = 'Numencode\Http\Controllers';
+
+    /**
+     * This namespace is applied to the admin controller routes in your routes file.
+     *
+     * @var string
+     */
+    protected $adminNamespace = 'Admin\Http\\';
+
+    /**
+     * This namespace is applied to the cms controller routes in your routes file.
+     *
+     * @var string
+     */
+    protected $cmsNamespace = 'Cms\Http\\';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -23,8 +37,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
     }
 
@@ -39,7 +51,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
-        //
+        $this->mapPublicRoutes();
     }
 
     /**
@@ -51,11 +63,27 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
+//        Route::group([
+//            'middleware' => 'web',
+//            'namespace' => $this->namespace,
+//        ], function ($router) {
+//            require base_path('routes/web.php');
+//        });
+    }
+
+    /**
+     * Define the "public" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @return void
+     */
+    protected function mapPublicRoutes()
+    {
         Route::group([
-            'middleware' => 'web',
-            'namespace' => $this->namespace,
+            'namespace' => $this->cmsNamespace,
         ], function ($router) {
-            require base_path('routes/web.php');
+            require base_path('routes/public.php');
         });
     }
 
