@@ -3,38 +3,21 @@
 namespace Cms\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\Request;
-use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\Auth;
 
 class IsAuthenticated
 {
     /**
-     * The Guard implementation.
-     *
-     * @var Guard
-     */
-    protected $auth;
-
-    /**
-     * Create a new IsAuthenticated middleware instance.
-     *
-     * @param Guard $auth
-     */
-    public function __construct(Guard $auth)
-    {
-        $this->auth = $auth;
-    }
-
-    /**
      * Check if user is authenticated or else display login screen.
      *
-     * @param Request $request
-     * @param callable $next
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @param  string|null  $guard
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next, $guard = null)
     {
-        if (!$this->auth->check()) {
+        if (Auth::guard($guard)->check()) {
             return redirect(route('login') . '?ref=profile');
         }
 

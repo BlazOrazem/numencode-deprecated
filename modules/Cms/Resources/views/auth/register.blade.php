@@ -6,7 +6,7 @@
 
         <h3 class="omb_authTitle">Please Sign Up <small>It's free and always will be.</small></h3>
 
-        <form method="POST" action="{{ route('register_action') }}" class="omb_loginForm" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('register.post') }}" class="omb_loginForm" enctype="multipart/form-data">
             {!! csrf_field() !!}
             <div class="row omb_row-sm-offset-2">
                 <div class="col-xs-12 col-sm-12 col-md-8">

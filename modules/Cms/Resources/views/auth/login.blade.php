@@ -4,29 +4,29 @@
 
     <div class="omb_login">
 
-        <h3 class="omb_authTitle">Login or <a href="{{ route('register_action') }}">Sign up</a></h3>
+        <h3 class="omb_authTitle">Login or <a href="{{ route('register') }}">Sign up</a></h3>
 
         <div class="row omb_row-sm-offset-2 omb_socialButtons">
             <div class="col-xs-3 col-sm-3 col-md-2">
-                <a href="{{ route('login_social') }}/facebook" class="btn btn-lg btn-block omb_btn-facebook">
+                <a href="{{ route('login.social') }}/facebook" class="btn btn-lg btn-block omb_btn-facebook">
                     <i class="fa fa-facebook visible-xs"></i>
                     <span class="hidden-xs">Facebook</span>
                 </a>
             </div>
             <div class="col-xs-3 col-sm-3 col-md-2">
-                <a href="{{ route('login_social') }}/twitter" class="btn btn-lg btn-block omb_btn-twitter">
+                <a href="{{ route('login.social') }}/twitter" class="btn btn-lg btn-block omb_btn-twitter">
                     <i class="fa fa-twitter visible-xs"></i>
                     <span class="hidden-xs">Twitter</span>
                 </a>
             </div>
             <div class="col-xs-3 col-sm-3 col-md-2">
-                <a href="{{ route('login_social') }}/google" class="btn btn-lg btn-block omb_btn-google">
+                <a href="{{ route('login.social') }}/google" class="btn btn-lg btn-block omb_btn-google">
                     <i class="fa fa-google-plus visible-xs"></i>
                     <span class="hidden-xs">Google+</span>
                 </a>
             </div>
             <div class="col-xs-3 col-sm-3 col-md-2">
-                <a href="{{ route('login_social') }}/github" class="btn btn-lg btn-block omb_btn-github">
+                <a href="{{ route('login.social') }}/github" class="btn btn-lg btn-block omb_btn-github">
                     <i class="fa fa-github visible-xs"></i>
                     <span class="hidden-xs">GitHub</span>
                 </a>
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <form method="POST" action="{{ route('login_action') }}" class="omb_loginForm">
+        <form method="POST" action="{{ route('login.post') }}" class="omb_loginForm">
             {!! csrf_field() !!}
             @if (isset($ref))
                 <input type="hidden" name="ref" value="{{ $ref }}">
@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-4">
                     <p class="omb_forgotPwd">
-                        <a href="{{ route('password_forget') }}">Forgot password?</a>
+                        <a href="{{ route('password.forget') }}">Forgot password?</a>
                     </p>
                 </div>
             </div>

@@ -6,7 +6,7 @@
 
         <h3 class="omb_authTitle">Reset Your Password</h3>
 
-        <form method="POST" action="{{ route('password_send') }}" class="omb_loginForm">
+        <form method="POST" action="{{ route('password.send') }}" class="omb_loginForm">
             {!! csrf_field() !!}
             <div class="row omb_row-sm-offset-2">
                 <div class="col-xs-12 col-sm-12 col-md-8">

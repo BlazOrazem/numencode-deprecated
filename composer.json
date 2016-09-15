@@ -1,7 +1,7 @@
 {
     "name": "laravel/laravel",
     "description": "NumencodeCMS",
-    "keywords": ["numencode", "numencodecms", "laravel"],
+    "keywords": ["numencode", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
