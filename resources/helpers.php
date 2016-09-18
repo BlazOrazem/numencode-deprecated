@@ -1,5 +1,7 @@
 <?php
 
+use Numencode\Utils\Flash;
+
 /**
  * Flash message handler.
  *

@@ -20,6 +20,8 @@ class BaseController extends Controller
     public function __construct()
     {
         $this->user = Auth::user();
+    
+//        dd($this->user);
 
         view()->share('user', $this->user);
         view()->share('signedIn', (bool)Auth::check());

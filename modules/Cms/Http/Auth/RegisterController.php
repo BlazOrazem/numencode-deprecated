@@ -4,10 +4,10 @@ namespace Cms\Http\Auth;
 
 use Validator;
 use Numencode\Models\User;
-use Numencode\Http\Controller;
+use Cms\Http\BaseController;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class RegisterController extends Controller
+class RegisterController extends BaseController
 {
     /*
     |--------------------------------------------------------------------------
@@ -28,16 +28,6 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
 
     /**
      * Get a validator for an incoming registration request.

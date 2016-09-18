@@ -50,6 +50,7 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
+//        'guest' => \Cms\Http\Middleware\IsGuest::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'isAdmin' => \Admin\Http\Middleware\IsAdmin::class,
         'isGuest' => \Cms\Http\Middleware\IsGuest::class,

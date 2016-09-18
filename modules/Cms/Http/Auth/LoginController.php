@@ -2,10 +2,12 @@
 
 namespace Cms\Http\Auth;
 
-use Numencode\Http\Controller;
+use Cms\Http\BaseController;
+use Cms\Http\Requests\LoginRequest;
+use Cms\Repositories\UserRepository;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
-class LoginController extends Controller
+class LoginController extends BaseController
 {
     /*
     |--------------------------------------------------------------------------
@@ -18,7 +20,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+//    use AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
@@ -29,12 +31,12 @@ class LoginController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        parent::__construct();
+
+        $this->middleware('isGuest', ['except' => 'logout']);
     }
 
     /**
@@ -45,5 +47,23 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         return view('theme::auth.login');
+    }
+
+    /**
+     * Create user login.
+     *
+     * @param LoginRequest $request
+     * @param UserRepository $repository
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function login(LoginRequest $request, UserRepository $repository)
+    {
+        $user = $request->resolvedUser();
+
+        $repository->login($user, $request->remember);
+
+        flash()->success(trans('messages.login.title', ['name' => $user->name]), trans('messages.login.content'));
+
+        return isset($request->ref) ? redirect(route($request->ref)) : redirect($this->redirectTo);
     }
 }
